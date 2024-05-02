@@ -10,12 +10,12 @@ class TestHBNBCommand(unittest.TestCase):
     """Unittests for testing the HBNB command interpreter."""
 
     @classmethod
-    def setUp(cls):
+    def setUp(self):
         try:
             os.rename("my_file.json", "tmp")
         except IOError:
             pass
-        cls.HBNB = HBNBCommand()
+        self.HBNB = HBNBCommand()
 
     @classmethod
     def tearDownMethod(cls):
