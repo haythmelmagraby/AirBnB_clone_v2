@@ -19,6 +19,7 @@ class DBStorage:
     """DBStorage Class"""
     __engine = None
     __session = None
+
     def __init__(self):
         """Initializatin"""
         self.__engine = create_engine("mysql+mysqldb://{}:{}@{}/{}".
@@ -43,7 +44,8 @@ class DBStorage:
             if type(cls) == str:
                 cls = eval(cls)
             objects = self.__session.query(cls)
-        return {"{}.{}".format(type(o).__name__, obj.id): obj for obj in objects}
+        return {"{}.{}".format(type(o).__name__, obj.id): obj
+                for obj in objects}
 
     def new(self, obj):
         """add objects to current db"""
