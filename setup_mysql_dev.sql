@@ -1,8 +1,8 @@
---create db
+-- create db
 CREATE DATABASE IF NOT EXISTS hbnb_dev_db;
---create user
+-- create user
 CREATE USER IF NOT EXISTS 'hbnb_dev'@'localhost' IDENTIFIED BY 'hbnb_dev_pwd';
---grant all privileges
+-- grant all privileges
 GRANT ALL PRIVILEGES ON hbnb_dev_db.* TO 'hbnb_dev'@'localhost';
 -- flush to access privilege
 FLUSH PRIVILEGES;
