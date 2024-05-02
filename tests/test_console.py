@@ -5,6 +5,7 @@ from io import StringIO
 from console import HBNBCommand
 from models.engine.file_storage import FileStorage
 
+
 class TestHBNBCommand(unittest.TestCase):
     """Unittests for testing the HBNB command interpreter."""
 
@@ -40,12 +41,12 @@ class TestHBNBCommand(unittest.TestCase):
                 "** class name missing **\n", my_file.getvalue())
         with patch("sys.stdout", new=StringIO()) as my_file:
             self.HBNB.onecmd("create asdfsfsd")
-            self.assertEqual(
-                "** class doesn't exist **\n", my_file.getvalue())
- 
+            self.assertEqual("** class doesn't exist **\n", my_file.getvalue())
+
     def test_kargs(self):
         with patch("sys.stdout", new=StringIO()) as my_file:
-            call = (f'create Place city_id="0022" name="My name" number_rooms=2 latitude=55.55 longitude=66.66')
+            call = (f'create Place city_id="0022" name="My name" number_rooms=2
+                    latitude=55.55 longitude=66.66')
             self.HBNB.onecmd(call)
             pl = my_file.getvalue().strip()
         with patch("sys.stdout", new=StringIO()) as my_file:
