@@ -23,7 +23,6 @@ package { 'nginx':
   ensure   => 'present',
   provider => 'apt'
 } ->
-
 file { '/data':
   ensure  => 'directory'
 } ->
