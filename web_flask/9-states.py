@@ -5,6 +5,7 @@ from flask import Flask
 from flask import render_template
 app = Flask(__name__)
 
+
 @app.route("/states", strict_slashes=False)
 def states():
     """ display states """
